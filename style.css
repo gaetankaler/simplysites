@@ -864,6 +864,16 @@ p {
   border-color: transparent;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 999; /* Ensure the overlay is on top of other content */
+  display: none; /* Initially hidden */
+}
 .overlay-left {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.6);
@@ -876,6 +886,9 @@ p {
 }
 .overlay-left.open {
   display: block;
+}
+.sidebar-open {
+  overflow: hidden;
 }
 
 /* ===== Buttons Css ===== */
@@ -1434,7 +1447,7 @@ p {
 /*===== latest-news-area =====*/
 .latest-news-area {
   background: var(--white);
-  padding: 180px 0;
+  padding-top: 180px;
 }
 .content-body {
   text-align: center;
@@ -1504,56 +1517,6 @@ p {
 }
 .latest-news-area .single-news:hover .image .thumb {
   transform: scale(1.1) rotate(1deg);
-}
-
-/*======================================
-    Brand CSS
-========================================*/
-.brand-area {
-  padding: 100px 0;
-  background: var(--light-3);
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .brand-area {
-    padding: 80px;
-  }
-}
-@media (max-width: 767px) {
-  .brand-area {
-    padding: 60px 0;
-  }
-}
-.brand-area .clients-logos {
-  text-align: center;
-  display: inline-block;
-  margin-top: 20px;
-}
-.brand-area .clients-logos .single-image {
-  display: inline-block;
-  margin: 13px 10px;
-  background-color: var(--white);
-  line-height: 100px;
-  padding: 8px 25px;
-  border-radius: 8px;
-  -webkit-transition: all 0.4s ease-out 0s;
-  -moz-transition: all 0.4s ease-out 0s;
-  -ms-transition: all 0.4s ease-out 0s;
-  -o-transition: all 0.4s ease-out 0s;
-  transition: all 0.4s ease-out 0s;
-  border: 1px solid #eee;
-}
-.brand-area .clients-logos .single-image:hover {
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.096);
-  -webkit-transform: translateY(-5px);
-  -moz-transform: translateY(-5px);
-  -ms-transform: translateY(-5px);
-  -o-transform: translateY(-5px);
-  transform: translateY(-5px);
-}
-.brand-area .clients-logos img {
-  max-width: 170px;
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
 }
 
 /* ===== Buttons Css ===== */
@@ -1798,3 +1761,50 @@ footer section {
   float: right;
   cursor: pointer;
 }
+
+/* //===== close navbar-collapse when a  clicked
+    let navbarTogglerNine = document.querySelector(".navbar-nine .navbar-toggler");
+    navbarTogglerNine.addEventListener("click", function () {
+        navbarTogglerNine.classList.toggle("active");
+    });
+    
+    // ==== left sidebar toggle
+    // ==== left sidebar toggle
+let sidebarLeft = document.querySelector(".sidebar-left");
+let overlayLeft = document.querySelector(".overlay-left");
+let sidebarClose = document.querySelector(".sidebar-close .close");
+
+// Fonction pour ouvrir la barre latérale et afficher l'overlay
+function openSidebar() {
+    sidebarLeft.style.transform = "translateX(0)";
+    overlayLeft.style.display = "block";
+    document.body.style.overflow = "hidden"; // Empêcher le défilement de la page principale lorsque la sidebar est ouverte
+}
+
+// Fonction pour fermer la barre latérale et masquer l'overlay
+function closeSidebar() {
+    sidebarLeft.style.transform = "translateX(100%)";
+    overlayLeft.style.display = "none";
+    document.body.style.overflow = ""; // Réactiver le défilement de la page principale lorsque la sidebar est fermée
+}
+
+// Event listener pour le bouton de fermeture de la barre latérale
+sidebarClose.addEventListener("click", function (event) {
+    event.preventDefault(); // Empêcher le comportement par défaut du lien
+    closeSidebar();
+});
+
+// Event listener pour l'overlay (pour fermer la barre latérale lorsqu'on clique dessus)
+overlayLeft.addEventListener("click", function () {
+    closeSidebar();
+});
+
+    
+    // ===== navbar nine sideMenu
+    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
+    
+    sideMenuLeftNine.addEventListener("click", function () {
+        sidebarLeft.classList.add("open");
+        overlayLeft.classList.add("open");
+    });
+     */

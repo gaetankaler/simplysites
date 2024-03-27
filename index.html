@@ -7,7 +7,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+  
   <!--====== Title ======-->
   <title>Simplysites</title>
 
@@ -30,7 +30,7 @@
 </head>
 
 <body>
-
+<div class="overlay"></div>
   <!--====== NAVBAR NINE PART START ======-->
 
   <section class="navbar-area navbar-nine">
@@ -63,7 +63,7 @@
                   <a class="page-scroll" href="#pricing">Tarifs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="page-scroll" href="#blog">Informations</a>
+                  <a class="page-scroll" href="#information">Informations</a>
                 </li>
                 <li class="nav-item">
                   <a class="page-scroll" href="#contact">Contact</a>
@@ -104,7 +104,7 @@
           <li><a href="#about">A propos</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#pricing">Tarifs</a></li>
-          <li><a href="#blog">Informations</a></li>
+          <li><a href="#information">Informations</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -370,7 +370,7 @@
 
 
   <!-- Start Latest News Area -->
-  <div id="blog" class="latest-news-area section">
+  <div id="information" class="latest-news-area section">
     <!--======  Start Section Title Five ======-->
     <div class="section-title-five">
       <div class="container">
@@ -396,13 +396,13 @@
                   </div>
                   <div class="content-body">
                       <h4 class="title">Pourquoi le référencement est essentielles ?</h4>
-                      <button type="button" id="article-button" class="btn primary-btn rounded-full article-button">
+                      <button type="button" class="btn primary-btn rounded-full article-button">
                           En savoir plus
                       </button>
                   </div>
               </div>
               <!-- Modal for article -->
-              <div id="article-modal-2" class="modal article-modal">
+              <div class="modal article-modal">
                   <div class="modal-content">
                       <div class="modal-header">
                           <h2>Pourquoi le référencement est essentielles ?</h2>
@@ -431,13 +431,13 @@
                   </div>
                   <div class="content-body">
                       <h4 class="title">Différence entre WordPress et <br>Sur-mesure ?</h4>
-                      <button type="button" id="article-button" class="btn primary-btn rounded-full article-button">
+                      <button type="button" class="btn primary-btn rounded-full article-button">
                           En savoir plus
                       </button>
                   </div>
               </div>
               <!-- Modal for article -->
-              <div id="article-modal-2" class="modal article-modal">
+              <div class="modal article-modal">
                   <div class="modal-content">
                       <div class="modal-header">
                           <h2>Différence entre WordPress et Sur-mesure ?</h2>
@@ -467,13 +467,13 @@
                   </div>
                   <div class="content-body">
                       <h4 class="title">Pourquoi héberger, sauvegarder son site ?</h4>
-                      <button type="button" id="article-button" class="btn primary-btn rounded-full article-button">
+                      <button type="button" class="btn primary-btn rounded-full article-button">
                           En savoir plus
                       </button>
                   </div>
               </div>
               <!-- Modal for article -->
-              <div id="article-modal-3" class="modal article-modal">
+              <div class="modal article-modal">
                   <div class="modal-content">
                       <div class="modal-header">
                           <h2>Pourquoi héberger, sauvegarder son site ?</h2>
@@ -501,57 +501,6 @@
   </div>
   <!-- End Latest News Area -->
   
-
-  <!-- Start Brand Area -->
-  <div id="clients" class="brand-area section">
-    <!--======  Start Section Title Five ======-->
-    <div class="section-title-five">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="content">
-              <h6>Meet our Clients</h6>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- row -->
-      </div>
-      <!-- container -->
-    </div>
-    <!--======  End Section Title Five ======-->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-12">
-          <div class="clients-logos">
-            <div class="single-image">
-              <img src="assets/images/client-logo/graygrids.svg" alt="Brand Logo Images" />
-            </div>
-            <div class="single-image">
-              <img src="assets/images/client-logo/uideck.svg" alt="Brand Logo Images" />
-            </div>
-            <div class="single-image">
-              <img src="assets/images/client-logo/ecomhtml.svg" alt="Brand Logo Images" />
-            </div>
-            <div class="single-image">
-              <img src="assets/images/client-logo/lineicons.svg" alt="Brand Logo Images" />
-            </div>
-            <div class="single-image">
-              <img src="assets/images/client-logo/tailwindtemplates.svg" alt="Brand Logo Images" />
-            </div>
-            <div class="single-image">
-              <img src="assets/images/client-logo/ecomhtml.svg" alt="Brand Logo Images" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Brand Area -->
-
   <!-- ========================= contact-section start ========================= -->
   <section id="contact" class="contact-section">
         <div class="section-title-five">
@@ -597,7 +546,7 @@
                   <input type="text" name="phone" id="phone" placeholder="Téléphone" required />
                 </div>
                 <div class="col-md-6">
-                  <input type="text" name="subject" id="email" placeholder="Objet" required />
+                  <input type="text" name="subject" id="objet" placeholder="Objet" required />
                 </div>
               </div>
               <div class="row">
@@ -744,18 +693,36 @@
     });
     
     // ==== left sidebar toggle
-    let sidebarLeft = document.querySelector(".sidebar-left");
-    let overlayLeft = document.querySelector(".overlay-left");
-    let sidebarClose = document.querySelector(".sidebar-close .close");
-    
-    overlayLeft.addEventListener("click", function () {
-        sidebarLeft.classList.toggle("open");
-        overlayLeft.classList.toggle("open");
-    });
-    sidebarClose.addEventListener("click", function () {
-        sidebarLeft.classList.remove("open");
-        overlayLeft.classList.remove("open");
-    });
+    // ==== left sidebar toggle
+let sidebarLeft = document.querySelector(".sidebar-left");
+let overlayLeft = document.querySelector(".overlay-left");
+let sidebarClose = document.querySelector(".sidebar-close .close");
+
+// Fonction pour ouvrir la barre latérale et afficher l'overlay
+function openSidebar() {
+    sidebarLeft.style.transform = "translateX(0)";
+    overlayLeft.style.display = "block";
+    document.body.style.overflow = "hidden"; // Empêcher le défilement de la page principale lorsque la sidebar est ouverte
+}
+
+// Fonction pour fermer la barre latérale et masquer l'overlay
+function closeSidebar() {
+    sidebarLeft.style.transform = "translateX(100%)";
+    overlayLeft.style.display = "none";
+    document.body.style.overflow = ""; // Réactiver le défilement de la page principale lorsque la sidebar est fermée
+}
+
+// Event listener pour le bouton de fermeture de la barre latérale
+sidebarClose.addEventListener("click", function (event) {
+    event.preventDefault(); // Empêcher le comportement par défaut du lien
+    closeSidebar();
+});
+
+// Event listener pour l'overlay (pour fermer la barre latérale lorsqu'on clique dessus)
+overlayLeft.addEventListener("click", function () {
+    closeSidebar();
+});
+
     
     // ===== navbar nine sideMenu
     let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
@@ -766,57 +733,78 @@
     });
     
     // ===== Legal Notices Window
-    let mentionsLegalesLink = document.getElementById('mentions-legales');
-    let modal = document.getElementById('modal');
-    let mentionsLegalesCloseBtn = document.querySelector('#modal .close');
-    
-    mentionsLegalesLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    });
-    
-    mentionsLegalesCloseBtn.addEventListener('click', function(event) {
-        event.stopPropagation();
+let mentionsLegalesLink = document.getElementById('mentions-legales');
+let modal = document.getElementById('modal');
+let mentionsLegalesCloseBtn = document.querySelector('#modal .close');
+
+mentionsLegalesLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    modal.style.display = 'block';
+    overlay.style.display = 'block'; // Displaying the overlay
+    document.body.style.overflow = 'hidden';
+});
+
+mentionsLegalesCloseBtn.addEventListener('click', function(event) {
+    event.stopPropagation();
+    modal.style.display = 'none';
+    overlay.style.display = 'none'; // Hiding the overlay
+    document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
         modal.style.display = 'none';
+        overlay.style.display = 'none'; // Hiding the overlay
         document.body.style.overflow = 'auto';
-    });
-    
-    window.addEventListener('click', function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
+    }
+});
     
     // ===== Article Modal Window
-// Recovery of all “Learn more” buttons
+// Retrieving all "Learn more" buttons
 let buttons = document.querySelectorAll('.article-button');
 
-// Retrieving all article modals
+let overlay = document.querySelector('.overlay');
+// Retrieving all modals
 let modals = document.querySelectorAll('.article-modal');
 
-// Loop on each button
+// Looping over each button
 buttons.forEach(function(button, index) {
     // Adding a click event listener
     button.addEventListener('click', function() {
+        // Closing all open modals
+        closeAllModals();
         // Displaying the corresponding modal
         modals[index].style.display = "block";
+         // Displaying the overlay
+        overlay.style.display = "block";
+        // Prevent scrolling of the main page
+        document.body.style.overflow = 'hidden';
     });
 });
 
-// Recovery of all close buttons
+// Retrieving all close buttons
 let closeButtons = document.querySelectorAll('.close');
 
-// Buckle on each button closure
+// Looping over each close button
 closeButtons.forEach(function(closeButton) {
     // Adding a click event listener
     closeButton.addEventListener('click', function() {
-        // Closing the corresponding modal
+        // Closing the modal
         let modal = this.parentElement.parentElement.parentElement;
         modal.style.display = "none";
+         // Hiding the overlay
+        overlay.style.display = "none";
+        // Restoring scrolling of the main page
+        document.body.style.overflow = 'auto';
     });
 });
+
+// Function to close all modals
+function closeAllModals() {
+    modals.forEach(function(modal) {
+        modal.style.display = "none";
+    });
+}
 
 </script>
 </body>
