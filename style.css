@@ -740,130 +740,6 @@ p {
   color: var(--primary);
   background-color: var(--white);
 }
-
-/*===== SIDEBAR ONE =====*/
-.sidebar-left {
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: var(--white);
-  height: 100%;
-  width: 300px;
-  padding-top: 80px;
-  z-index: 999;
-  -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
-  transform: translateX(100%);
-  transition: all 0.4s ease-in-out;
-  text-align: left;
-}
-.sidebar-left.open {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
-}
-@media (max-width: 767px) {
-  .sidebar-left {
-    width: 250px;
-  }
-}
-.sidebar-left .sidebar-close {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-}
-.sidebar-left .sidebar-close .close {
-  font-size: 18px;
-  color: var(--black);
-  -webkit-transition: all 0.2s ease-out 0s;
-  -moz-transition: all 0.2s ease-out 0s;
-  -ms-transition: all 0.2s ease-out 0s;
-  -o-transition: all 0.2s ease-out 0s;
-  transition: all 0.2s ease-out 0s;
-}
-.sidebar-left .sidebar-close .close:hover {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-.sidebar-left .sidebar-content {
-  padding: 0px 30px;
-}
-.sidebar-left .sidebar-content .sidebar-menu {
-  margin-top: 30px;
-}
-.sidebar-left .sidebar-content .sidebar-menu .menu-title {
-  font-size: 18px;
-  font-weight: 600;
-}
-.sidebar-left .sidebar-content .sidebar-menu ul {
-  margin-top: 15px;
-}
-.sidebar-left .sidebar-content .sidebar-menu ul li a {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  padding: 8px 0;
-  color: var(--dark-3);
-  text-transform: capitalize;
-  position: relative;
-  border-radius: 5px;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-  display: block;
-}
-.sidebar-left .sidebar-content .sidebar-menu ul li a:hover {
-  color: var(--primary);
-  padding-left: 5px;
-}
-.sidebar-left .sidebar-content .text {
-  margin-top: 20px;
-}
-.sidebar-left .sidebar-content .sidebar-social {
-  margin-top: 30px;
-}
-.sidebar-left .sidebar-content .sidebar-social .social-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 25px;
-}
-.sidebar-left .sidebar-content .sidebar-social ul li {
-  display: inline-block;
-  margin-right: 5px;
-}
-.sidebar-left .sidebar-content .sidebar-social ul li:last-child {
-  margin: 0;
-}
-.sidebar-left .sidebar-content .sidebar-social ul li a {
-  height: 38px;
-  width: 38px;
-  line-height: 38px;
-  text-align: center;
-  border: 1px solid #eee;
-  border-radius: 50%;
-  font-size: 18px;
-  color: #666;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-}
-.sidebar-left .sidebar-content .sidebar-social ul li a:hover {
-  color: var(--white);
-  background-color: var(--primary);
-  border-color: transparent;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -874,23 +750,6 @@ p {
   z-index: 999; /* Ensure the overlay is on top of other content */
   display: none; /* Initially hidden */
 }
-.overlay-left {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.6);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 99;
-}
-.overlay-left.open {
-  display: block;
-}
-.sidebar-open {
-  overflow: hidden;
-}
-
 /* ===== Buttons Css ===== */
 .header-eight .primary-btn {
   background: var(--primary);
@@ -1010,6 +869,8 @@ p {
   background-color: var(--light-3);
   padding-top: 180px;
   padding-bottom: 90px;
+  background-image: url("assets/images/a-propos.png");
+
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .about-five {
@@ -1169,6 +1030,8 @@ p {
   }
 }
 .services-eight .single-services {
+  text-align: left;
+  height: 500px;
   padding: 40px 30px;
   border: 1px solid var(--light-1);
   border-radius: 10px;
@@ -1701,9 +1564,10 @@ footer section {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: lightcyan;
+  background-color: var(--primary);
   padding-bottom: 20px;
   margin-top: 10px;
+  color: var(--white);
 }
 #mentions-legales {
   margin: 20px 0 10px 0;
@@ -1762,49 +1626,5 @@ footer section {
   cursor: pointer;
 }
 
-/* //===== close navbar-collapse when a  clicked
-    let navbarTogglerNine = document.querySelector(".navbar-nine .navbar-toggler");
-    navbarTogglerNine.addEventListener("click", function () {
-        navbarTogglerNine.classList.toggle("active");
-    });
     
-    // ==== left sidebar toggle
-    // ==== left sidebar toggle
-let sidebarLeft = document.querySelector(".sidebar-left");
-let overlayLeft = document.querySelector(".overlay-left");
-let sidebarClose = document.querySelector(".sidebar-close .close");
 
-// Fonction pour ouvrir la barre latérale et afficher l'overlay
-function openSidebar() {
-    sidebarLeft.style.transform = "translateX(0)";
-    overlayLeft.style.display = "block";
-    document.body.style.overflow = "hidden"; // Empêcher le défilement de la page principale lorsque la sidebar est ouverte
-}
-
-// Fonction pour fermer la barre latérale et masquer l'overlay
-function closeSidebar() {
-    sidebarLeft.style.transform = "translateX(100%)";
-    overlayLeft.style.display = "none";
-    document.body.style.overflow = ""; // Réactiver le défilement de la page principale lorsque la sidebar est fermée
-}
-
-// Event listener pour le bouton de fermeture de la barre latérale
-sidebarClose.addEventListener("click", function (event) {
-    event.preventDefault(); // Empêcher le comportement par défaut du lien
-    closeSidebar();
-});
-
-// Event listener pour l'overlay (pour fermer la barre latérale lorsqu'on clique dessus)
-overlayLeft.addEventListener("click", function () {
-    closeSidebar();
-});
-
-    
-    // ===== navbar nine sideMenu
-    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
-    
-    sideMenuLeftNine.addEventListener("click", function () {
-        sidebarLeft.classList.add("open");
-        overlayLeft.classList.add("open");
-    });
-     */
